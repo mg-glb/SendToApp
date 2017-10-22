@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SendToApp</string>
+    <string name="button1">Call</string>
+    <string name="button2">Browse</string>
+    <string name="button3">Send</string>
+    <string name="button4">Schedule</string>
+    <string name="webChooserTitle">Choose a browser</string>
+</resources>
