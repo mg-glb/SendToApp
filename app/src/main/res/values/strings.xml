@@ -5,4 +5,5 @@
     <string name="button3">Send</string>
     <string name="button4">Schedule</string>
     <string name="webChooserTitle">Choose a browser</string>
+    <string name="mailChooserTitle">Choose a sender</string>
 </resources>

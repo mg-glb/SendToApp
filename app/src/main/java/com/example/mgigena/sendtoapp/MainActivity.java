@@ -1,5 +1,6 @@
 package com.example.mgigena.sendtoapp;
 
+import android.content.ComponentName;
 import android.content.Intent;
 
 import java.util.Calendar;
@@ -67,13 +68,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
-                emailIntent.setType("text/plan");
+                emailIntent.setType("text/plain");
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"m.gigena@globant.com"});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Email subject");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message text");
 
-                if (checkIntent(emailIntent)) {
-                    startActivity(emailIntent);
+                String title = getResources().getString(R.string.mailChooserTitle);
+                Intent chooser = Intent.createChooser(emailIntent,title);
+                PackageManager aux1 =getPackageManager();
+                ComponentName aux2 = emailIntent.resolveActivity(aux1);
+                if (aux2 != null) {
+                    startActivity(chooser);
                 }
             }
         });
